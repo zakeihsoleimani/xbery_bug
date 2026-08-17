@@ -18,6 +18,12 @@ class Bug extends Model
         'bugShow' => 'پردازش باگ',
     ];
 
+    const STATUSES = [
+        'open' => 'باز',
+        'in_progress' => 'در حال بررسی',
+        'resolved' => 'حل‌شده',
+    ];
+
     public function reporter()
     {
         return $this->belongsTo(Admin::class, 'reporter_mobile', 'mobile');

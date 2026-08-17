@@ -12,6 +12,7 @@ Route::middleware('auth')->group(function () {
     Route::prefix('process')->name('process.')->controller(ProcessController::class)->group(function () {
         Route::get('/', 'index')->name('index');
         Route::get('show/{bug}', 'show')->name('show');
+        Route::post('claim/{bug}', 'claim')->name('claim');
     });
 
     //وابستگی‌ها با لاگین
@@ -20,6 +21,7 @@ Route::middleware('auth')->group(function () {
         Route::get('guide', 'guide')->name('guide');
         Route::prefix('bug')->name('bug.')->group(function () {
             Route::get('/', 'bug')->name('index');
+            Route::get('my-bugs', 'myBugs')->name('my-bugs');
             Route::get('create', 'bugCreate')->name('create');
             Route::post('store', 'bugStore')->name('store');
             Route::get('show/{bug}', 'bugShow')->name('show');

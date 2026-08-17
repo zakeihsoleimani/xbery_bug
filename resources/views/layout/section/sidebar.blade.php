@@ -37,6 +37,30 @@
                     </div>
                 </a>
             </li>
+            <li class="my-2">
+                <a class="d-block profile-link mx-2 {{ request()->is('process') || request()->is('process/') ? 'active-link' : '' }}" href="{{ route('process.index') }}">
+                    <div class="border-bottom py-3 d-flex align-items-center ">
+                        <span class="me-2">
+                            <span class="me-2">
+                                <img src="{{ url('assets/library/shadonic/icons/bug.svg') }}" width="23" height="23" />
+                            </span>    
+                            تالار باگ‌ها
+                        </span>
+                    </div>
+                </a>
+            </li>
+            <li class="my-2">
+                <a class="d-block profile-link mx-2 {{ request()->is('bug/my-bugs') ? 'active-link' : '' }}" href="{{ route('bug.my-bugs') }}">
+                    <div class="border-bottom py-3 d-flex align-items-center ">
+                        <span class="me-2">
+                            <span class="me-2">
+                                <img src="{{ url('assets/library/shadonic/icons/bug.svg') }}" width="23" height="23" />
+                            </span>      
+                            باگ‌های من
+                        </span>
+                    </div>
+                </a>
+            </li>
             <li class="nav-item has-submenu">
                 <a class="nav-link profile-link nav-link-1" href="#">
                     <div class="d-flex align-items-center">

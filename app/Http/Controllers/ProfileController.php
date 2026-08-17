@@ -25,7 +25,29 @@ class ProfileController extends Controller
     }
 
     /**
-    * باگ‌ها
+    * راهنما
+     */
+    public function guide()
+    {
+        return view('guide');
+    }
+
+    /**
+    * باگ‌های انتخاب‌شده (درخواست شده)
+     */
+    public function myBugs()
+    {
+        $bugs = Bug::where('app_name', env('APP_NAME'))
+            ->where('admin_mobile', auth()->user()->mobile)
+            ->with(['reporter', 'admin'])
+            ->withCount('messages')
+            ->latest()
+            ->paginate(10);
+        return view('bug.my-bugs', compact('bugs'));
+    }
+
+    /**
+    * باگ‌های گزارش شده توسط من
      */
     public function bug()
     {
