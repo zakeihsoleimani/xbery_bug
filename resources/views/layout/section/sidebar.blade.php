@@ -76,6 +76,9 @@
                     </div>
                 </a>
                 <ul class="submenu p-0 {{ request()->is('guide*') || request()->is('bug*') ? 'has-submenu' : 'collapse' }}">
+                    <li class="{{ request()->is('guide') ? 'active-link' : '' }}">
+                        <a class="nav-link py-2 pe-4" href="{{ route('guide') }}">راهنمای استفاده</a>
+                    </li>
                     <li class="{{ request()->is('bug') || request()->is('bug/create') ? 'active-link' : '' }}">
                         <a class="nav-link py-2 pe-4" href="{{ url('bug') }}">گزارش  یا پیشنهاد</a>
                     </li>
